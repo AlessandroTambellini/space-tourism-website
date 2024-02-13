@@ -1,0 +1,76 @@
+@import "./design-system.css";
+
+/*==========
+  Components
+========== */
+
+.tab-list {
+  --gap: 2rem;
+}
+
+/* ==========
+  Page Specific Backgrounds
+========== */
+
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+/* home */
+.home {
+  background-image: url(../images/home/background-home-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+  .home {
+    background-position: center center;
+    background-image: url(../images/home/background-home-tablet.jpg);
+  }
+}
+
+@media (min-width: 45rem) {
+  .home {
+    background-image: url(../images/home/background-home-desktop.jpg);
+  }
+}
+
+/* ========== 
+  Grid Layout 
+========== */
+
+.numbered-title {
+  grid-area: title;
+}
+
+@media (min-width: 35rem) {
+  .numbered-title {
+    justify-self: start;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 45rem) {
+  .grid-container {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+        1rem,
+        1fr
+      );
+  }
+
+  .grid-container--home {
+    padding-bottom: min(6rem);
+    align-items: end;
+    max-height: 50rem;
+  }
+
+  .grid-container--home > *:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container--home > *:last-child {
+    grid-column: 3;
+  }
+}
